@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import permissions
@@ -22,3 +22,24 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
                           IsAuthorOrReadOnly]
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+
+class UpvoteView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request, post_id):
+        try:
+            post = Post.objects.get(id=post_id)
+        except Post.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        user = self.request.user
+        if post in user.posts_upvoted.all():
+            post.user_upvotes.remove(user)
+        else:
+            post.user_upvotes.add(user)
+
+        post.amount_of_upvotes = post.user_upvotes.count()
+        post.save()
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
