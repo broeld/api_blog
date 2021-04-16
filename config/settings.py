@@ -8,7 +8,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 DEBUG = int(os.environ.get("DJANGO_DEBUG", default=0))
 ENVIRONMENT = os.environ.get("ENVIRONMENT", default="development")
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", ""]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "news-api-assessment.herokuapp.com/"]
 
 
 INSTALLED_APPS = [
