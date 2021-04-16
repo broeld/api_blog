@@ -38,7 +38,7 @@ class CommentList(generics.ListCreateAPIView):
         comments = Comment.objects.filter(post=post)
 
         if parent:
-            comments.filter(parent=parent)
+            comments = comments.filter(parent=parent)
 
         return comments
 
