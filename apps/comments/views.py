@@ -53,10 +53,8 @@ class CommentList(generics.ListCreateAPIView):
 
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly,
-        IsAuthorOrReadOnly,
-    ]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly,
+                          IsAuthorOrReadOnly]
     serializer_class = CommentSerializer
 
     def get_queryset(self):
