@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'apps.users.apps.UsersConfig',
     'apps.posts.apps.PostsConfig',
+    'apps.comments.apps.CommentsConfig',
 ]
 
 MIDDLEWARE = [
