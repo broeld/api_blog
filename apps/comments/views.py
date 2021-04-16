@@ -15,7 +15,7 @@ class CommentList(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
 
     def get_post(self):
-        post_id = self.kwargs.get('post_id')
+        post_id = self.kwargs.get("post_id")
         if post_id is None:
             raise NotFound()
 
@@ -33,12 +33,14 @@ class CommentList(generics.ListCreateAPIView):
 
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly,
-                          IsAuthorOrReadOnly]
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly,
+        IsAuthorOrReadOnly,
+    ]
     serializer_class = CommentSerializer
 
     def get_queryset(self):
-        post_id = self.kwargs.get('post_id')
+        post_id = self.kwargs.get("post_id")
         if post_id is None:
             raise NotFound()
 
@@ -53,7 +55,7 @@ class RepliesList(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
 
     def get_post(self):
-        post_id = self.kwargs.get('post_id')
+        post_id = self.kwargs.get("post_id")
 
         if post_id is None:
             raise NotFound()
@@ -62,7 +64,7 @@ class RepliesList(generics.ListCreateAPIView):
         return post
 
     def get_comment(self):
-        comment_id = self.kwargs.get('comment_id')
+        comment_id = self.kwargs.get("comment_id")
 
         if comment_id is None:
             raise NotFound()

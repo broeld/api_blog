@@ -8,14 +8,14 @@ class Post(models.Model):
     creation_date = models.DateField(auto_now=True)
     amount_of_upvotes = models.PositiveIntegerField(default=0)
     user_upvotes = models.ManyToManyField(User,
-                                          related_name='posts_upvoted',
+                                          related_name="posts_upvoted",
                                           blank=True)
     author = models.ForeignKey(User,
                                on_delete=models.CASCADE,
-                               related_name='posts')
+                               related_name="posts")
 
     class Meta:
-        ordering = ('-creation_date', )
+        ordering = ("-creation_date",)
 
     def __str__(self):
         return self.title

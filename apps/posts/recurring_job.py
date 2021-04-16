@@ -1,6 +1,6 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from . models import Post
+from .models import Post
 
 
 def reset_post_upvotes():
@@ -13,5 +13,5 @@ def reset_post_upvotes():
 
 def start_reset_post_upvotes():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(reset_post_upvotes, 'cron', minute=1, hour=0)
+    scheduler.add_job(reset_post_upvotes, "cron", minute=1, hour=0)
     scheduler.start()
