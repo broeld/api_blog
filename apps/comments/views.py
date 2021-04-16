@@ -22,14 +22,34 @@ class CommentList(generics.ListCreateAPIView):
         post = get_object_or_404(Post, id=post_id)
         return post
 
+    def get_comment(self):
+        try:
+            comment_id = self.kwargs["comment_id"]
+        except KeyError:
+            return None
+
+        parent = get_object_or_404(Comment, id=comment_id)
+        return parent
+
     def get_queryset(self):
         post = self.get_post()
+        parent = self.get_comment()
+
         comments = Comment.objects.filter(post=post)
+
+        if parent:
+            comments.filter(parent=parent)
+
         return comments
 
     def perform_create(self, serializer):
         post = self.get_post()
-        serializer.save(author=self.request.user, post=post)
+        parent = self.get_comment()
+
+        if parent:
+            serializer.save(author=self.request.user, post=post, parent=parent)
+        else:
+            serializer.save(author=self.request.user, post=post)
 
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -48,39 +68,3 @@ class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
 
         comments = Comment.objects.filter(post=post)
         return comments
-
-
-class RepliesList(generics.ListCreateAPIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    serializer_class = CommentSerializer
-
-    def get_post(self):
-        post_id = self.kwargs.get("post_id")
-
-        if post_id is None:
-            raise NotFound()
-
-        post = get_object_or_404(Post, id=post_id)
-        return post
-
-    def get_comment(self):
-        comment_id = self.kwargs.get("comment_id")
-
-        if comment_id is None:
-            raise NotFound()
-
-        parent = get_object_or_404(Comment, id=comment_id)
-        return parent
-
-    def get_queryset(self):
-        post = self.get_post()
-        parent = self.get_comment()
-
-        comments = Comment.objects.filter(post=post, parent=parent)
-        return comments
-
-    def perform_create(self, serializer):
-        post = self.get_post()
-        parent = self.get_comment()
-
-        serializer.save(author=self.request.user, post=post, parent=parent)
