@@ -39,7 +39,6 @@ class UpvoteView(APIView):
         else:
             post.user_upvotes.add(user)
 
-        post.amount_of_upvotes = post.user_upvotes.count()
         post.save()
         serializer = PostSerializer(post)
         return Response(serializer.data)
