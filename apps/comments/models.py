@@ -11,7 +11,7 @@ class Comment(models.Model):
                              on_delete=models.CASCADE,
                              related_name="replies")
     content = models.TextField()
-    creation_date = models.DateField(auto_now=True)
+    creation_date = models.DateField(auto_now_add=True)
 
     parent = models.ForeignKey("self",
                                on_delete=models.CASCADE,
