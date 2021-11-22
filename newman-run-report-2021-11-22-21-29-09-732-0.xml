@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="news_api" tests="16" time="6.263">
+  <testsuite name="users / create user" id="f4e73b9e-594c-40e1-9b03-cb29b8fd9581" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.950"/>
+  <testsuite name="users / get user (self)" id="61001563-5949-43e9-a882-3270856b9b89" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.438"/>
+  <testsuite name="users / update user(self)" id="65afd1f3-8570-4d6b-882a-bbdc1e4c95ef" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.580"/>
+  <testsuite name="posts / posts" id="9d0d00c0-3e90-492e-b151-bb18861be96a" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.157"/>
+  <testsuite name="posts / create post" id="2f7febf6-1fee-4dea-aa6a-e7bdd9eb2ed8" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.358"/>
+  <testsuite name="posts / get post by id" id="c1b666fe-0082-4701-8674-13b815207ea8" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.222"/>
+  <testsuite name="posts / update post by id" id="0a864200-e8fa-4f34-a6ff-d66c0386640c" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.534"/>
+  <testsuite name="posts / delete post by id" id="75e58da2-4a66-43cd-8ac6-c67654e53012" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.634"/>
+  <testsuite name="posts / post upvote/downvote" id="e90a2baa-cff6-4aaa-89b4-c8b72e29b85e" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.391"/>
+  <testsuite name="comments / comments by post" id="1bfa2e0e-54a2-4584-a029-71fd9d80f5b2" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.187"/>
+  <testsuite name="comments / create comment to post" id="37d9b44c-783a-41bc-9c9e-850e42a64875" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.367"/>
+  <testsuite name="comments / get comment" id="2bd5e10e-159e-458c-a661-f684f5a0b11a" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.149"/>
+  <testsuite name="comments / update comment" id="1daa89a8-20fb-48ae-8849-bf788be371a8" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.347"/>
+  <testsuite name="comments / delete comment" id="04f2a838-2ee0-4dd4-a24b-7db4e30abc7f" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.380"/>
+  <testsuite name="comments / get replies to comment" id="60713ab2-f5c2-4da6-b047-a3734d97ba76" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.172"/>
+  <testsuite name="comments / create reply to comment" id="6e993b1e-74c5-4eb7-a103-6a7fcf7dbd6f" timestamp="2021-11-22T21:29:03.029Z" tests="0" failures="0" errors="0" time="0.397"/>
+</testsuites>

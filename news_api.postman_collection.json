@@ -1,0 +1,668 @@
+{
+	"info": {
+		"_postman_id": "0ac1f302-a649-4d50-bcd0-cf92c7a4c939",
+		"name": "news_api",
+		"description": "## News API Collection\n\nNews API: [link](https://news-api-assessment.herokuapp.com/api/posts/)\n\nThis is a collection to news api created as test assessment by Dina Iovcheva  [github:broeld/news_api](https://github.com/broeld/news_api)\n\nNews api provides CRUD functions to posts, comments, replies to comments and a few functions to users (create, update and get by id).\n\n#### users\n| endpoint          | description   |\n| ----------------- |:-------------:|\n| POST api/users/   | create user   |\n| GET  api/users/{{user_id}}/     | get user-info (only for your user account) |\n| PUT  api/users/{{user_id}}/     | update user info (only for your user account)|\n\n\n#### posts\n| endpoint          | description   |\n| ----------------- |:-------------:|\n| GET     api/posts/    | get all posts   |\n| POST    api/posts/   | create post (only for users) |\n| GET     api/posts/{{post_id}}/   | get post|\n| PUT     api/posts/{{post_id}}/   | update post (only for author)  |\n| DELETE  api/posts/{{post_id}}/   | delete post (only for author) |\n| POST    api/posts/{{post_id}}/upvote   | upvote/downvote post |\n\n#### comments\n\n| endpoint          | description   |\n| ----------------- |:-------------:|\n| GET     api/posts/{{post_id}}/comments/  | get comments to post   |\n| POST    api/posts/{{post_id}}/comments/  | create comment to post (only for users)  |\n| GET     api/posts/{{post_id}}/comments/{{comment_id}}/   | get comment info |\n| PUT     api/posts/{{post_id}}/comments/{{comment_id}}/   | update comment (only for author) |\n| DELETE  api/posts/{{post_id}}/comments/{{comment_id}}/   | delete comment (only for author) |\n| GET     api/posts/{{post_id}}/comments/{{comment_id}}/replies   | get replies to comment  |\n| POST    api/posts/{{post_id}}/comments/{{comment_id}}/replies   | create reply to comment |",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{user_username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{env}}/api/users/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user (self)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{user_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/api/users/4/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user(self)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{user_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{user_username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{env}}/api/users/{{user_id}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "posts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/api/posts/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								""
+							]
+						},
+						"description": "get all posts\n"
+					},
+					"response": []
+				},
+				{
+					"name": "create post",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{user_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "{{post_title}}",
+									"type": "text"
+								},
+								{
+									"key": "link",
+									"value": "{{post_link}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{env}}/api/posts/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get post by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/api/posts/{{post_id}}/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{post_id}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update post by id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{user_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "{{post_title}}",
+									"type": "text"
+								},
+								{
+									"key": "link",
+									"value": "{{post_title}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{env}}/api/posts/{{post_id}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{post_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post by id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{user_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/api/posts/{{post_id}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{post_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post upvote/downvote",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{user_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/api/posts/{{post_id}}/upvote/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{post_id}}",
+								"upvote",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "comments by post",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/api/posts/{{post_id}}/comments/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{post_id}}",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create comment to post",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{user_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "{{comment_content}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{env}}/api/posts/{{post_id}}/comments/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{post_id}}",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get comment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/api/posts/{{post_id}}/comments/{{comment_id}}/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{post_id}}",
+								"comments",
+								"{{comment_id}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update comment",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{user_username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "{{comment_content}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{env}}/api/posts/{{post_id}}/comments/{{comment_id}}/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{post_id}}",
+								"comments",
+								"{{comment_id}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete comment",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{user_username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/api/posts/{{post_id}}/comments/{{comment_id}}/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{post_id}}",
+								"comments",
+								"{{comment_id}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get replies to comment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/api/posts/{{post_id}}/comments/{{comment_id}}/replies/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{post_id}}",
+								"comments",
+								"{{comment_id}}",
+								"replies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create reply to comment",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "dina",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{user_password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "{{comment_content}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{env}}/api/posts/{{post_id}}/comments/{{comment_id}}/replies/",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"{{post_id}}",
+								"comments",
+								"{{comment_id}}",
+								"replies",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{user_password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{user_username}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
