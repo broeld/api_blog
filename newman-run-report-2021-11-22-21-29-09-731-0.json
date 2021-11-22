@@ -1,0 +1,5977 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "0ac1f302-a649-4d50-bcd0-cf92c7a4c939"
+    },
+    "item": [
+      {
+        "id": "20ebb773-0db3-4681-a66f-d334b400cda9",
+        "name": "users",
+        "item": [
+          {
+            "id": "f4e73b9e-594c-40e1-9b03-cb29b8fd9581",
+            "name": "create user",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "users",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "POST",
+              "body": {
+                "mode": "formdata",
+                "formdata": [
+                  {
+                    "key": "username",
+                    "value": "{{user_username}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "{{user_password}}",
+                    "type": "text"
+                  }
+                ]
+              },
+              "auth": {
+                "type": "noauth",
+                "noauth": []
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "61001563-5949-43e9-a882-3270856b9b89",
+            "name": "get user (self)",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "users",
+                  "4",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "GET",
+              "auth": {
+                "type": "basic",
+                "basic": [
+                  {
+                    "type": "string",
+                    "value": "{{user_password}}",
+                    "key": "password"
+                  },
+                  {
+                    "type": "string",
+                    "value": "{{user_username}}",
+                    "key": "username"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "65afd1f3-8570-4d6b-882a-bbdc1e4c95ef",
+            "name": "update user(self)",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "users",
+                  "{{user_id}}"
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "PUT",
+              "body": {
+                "mode": "formdata",
+                "formdata": [
+                  {
+                    "key": "username",
+                    "value": "{{user_username}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "password",
+                    "value": "{{user_password}}",
+                    "type": "text"
+                  }
+                ]
+              },
+              "auth": {
+                "type": "basic",
+                "basic": [
+                  {
+                    "type": "string",
+                    "value": "{{user_password}}",
+                    "key": "password"
+                  },
+                  {
+                    "type": "string",
+                    "value": "{{user_username}}",
+                    "key": "username"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "event": []
+          }
+        ],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "ab15af17-8c7b-42ac-a655-9f3f6f326dd8",
+              "type": "text/javascript",
+              "exec": [
+                ""
+              ],
+              "_lastExecutionId": "deca0f2e-0e9a-49a8-aa5e-c09271c21a34"
+            }
+          },
+          {
+            "listen": "test",
+            "script": {
+              "id": "f5932985-f1aa-4e42-9c20-e834f363f786",
+              "type": "text/javascript",
+              "exec": [
+                ""
+              ],
+              "_lastExecutionId": "435dfafd-bf4c-4583-8b2d-1aa52362cfb2"
+            }
+          }
+        ]
+      },
+      {
+        "id": "cbd1cb67-6818-4a33-a107-22d4a846ebac",
+        "name": "posts",
+        "item": [
+          {
+            "id": "9d0d00c0-3e90-492e-b151-bb18861be96a",
+            "name": "posts",
+            "request": {
+              "description": {
+                "content": "get all posts\n",
+                "type": "text/plain"
+              },
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "GET",
+              "auth": {
+                "type": "noauth",
+                "noauth": []
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "2f7febf6-1fee-4dea-aa6a-e7bdd9eb2ed8",
+            "name": "create post",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "POST",
+              "body": {
+                "mode": "formdata",
+                "formdata": [
+                  {
+                    "key": "title",
+                    "value": "{{post_title}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "link",
+                    "value": "{{post_link}}",
+                    "type": "text"
+                  }
+                ]
+              },
+              "auth": {
+                "type": "basic",
+                "basic": [
+                  {
+                    "type": "string",
+                    "value": "{{user_password}}",
+                    "key": "password"
+                  },
+                  {
+                    "type": "string",
+                    "value": "{{user_username}}",
+                    "key": "username"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "c1b666fe-0082-4701-8674-13b815207ea8",
+            "name": "get post by id",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  "{{post_id}}",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "GET",
+              "auth": {
+                "type": "noauth",
+                "noauth": []
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "0a864200-e8fa-4f34-a6ff-d66c0386640c",
+            "name": "update post by id",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  "{{post_id}}"
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "PUT",
+              "body": {
+                "mode": "formdata",
+                "formdata": [
+                  {
+                    "key": "title",
+                    "value": "{{post_title}}",
+                    "type": "text"
+                  },
+                  {
+                    "key": "link",
+                    "value": "{{post_title}}",
+                    "type": "text"
+                  }
+                ]
+              },
+              "auth": {
+                "type": "basic",
+                "basic": [
+                  {
+                    "type": "string",
+                    "value": "{{user_password}}",
+                    "key": "password"
+                  },
+                  {
+                    "type": "string",
+                    "value": "{{user_username}}",
+                    "key": "username"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "75e58da2-4a66-43cd-8ac6-c67654e53012",
+            "name": "delete post by id",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  "{{post_id}}"
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "DELETE",
+              "auth": {
+                "type": "basic",
+                "basic": [
+                  {
+                    "type": "string",
+                    "value": "{{user_password}}",
+                    "key": "password"
+                  },
+                  {
+                    "type": "string",
+                    "value": "{{user_username}}",
+                    "key": "username"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "e90a2baa-cff6-4aaa-89b4-c8b72e29b85e",
+            "name": "post upvote/downvote",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  "{{post_id}}",
+                  "upvote",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "POST",
+              "auth": {
+                "type": "basic",
+                "basic": [
+                  {
+                    "type": "string",
+                    "value": "{{user_password}}",
+                    "key": "password"
+                  },
+                  {
+                    "type": "string",
+                    "value": "{{user_username}}",
+                    "key": "username"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "event": []
+          }
+        ],
+        "event": []
+      },
+      {
+        "id": "86e829b5-fe21-4eca-8a14-8da246fa1002",
+        "name": "comments",
+        "item": [
+          {
+            "id": "1bfa2e0e-54a2-4584-a029-71fd9d80f5b2",
+            "name": "comments by post",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  "{{post_id}}",
+                  "comments",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "GET",
+              "auth": {
+                "type": "noauth",
+                "noauth": []
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "37d9b44c-783a-41bc-9c9e-850e42a64875",
+            "name": "create comment to post",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  "{{post_id}}",
+                  "comments",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "POST",
+              "body": {
+                "mode": "formdata",
+                "formdata": [
+                  {
+                    "key": "content",
+                    "value": "{{comment_content}}",
+                    "type": "text"
+                  }
+                ]
+              },
+              "auth": {
+                "type": "basic",
+                "basic": [
+                  {
+                    "type": "string",
+                    "value": "{{user_password}}",
+                    "key": "password"
+                  },
+                  {
+                    "type": "string",
+                    "value": "{{user_username}}",
+                    "key": "username"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "2bd5e10e-159e-458c-a661-f684f5a0b11a",
+            "name": "get comment",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  "{{post_id}}",
+                  "comments",
+                  "{{comment_id}}",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "GET",
+              "auth": {
+                "type": "noauth",
+                "noauth": []
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "1daa89a8-20fb-48ae-8849-bf788be371a8",
+            "name": "update comment",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  "{{post_id}}",
+                  "comments",
+                  "{{comment_id}}",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "PUT",
+              "body": {
+                "mode": "formdata",
+                "formdata": [
+                  {
+                    "key": "content",
+                    "value": "{{comment_content}}",
+                    "type": "text"
+                  }
+                ]
+              },
+              "auth": {
+                "type": "basic",
+                "basic": [
+                  {
+                    "type": "string",
+                    "value": "{{user_username}}",
+                    "key": "username"
+                  },
+                  {
+                    "type": "string",
+                    "value": "{{user_password}}",
+                    "key": "password"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "04f2a838-2ee0-4dd4-a24b-7db4e30abc7f",
+            "name": "delete comment",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  "{{post_id}}",
+                  "comments",
+                  "{{comment_id}}",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "DELETE",
+              "auth": {
+                "type": "basic",
+                "basic": [
+                  {
+                    "type": "string",
+                    "value": "{{user_username}}",
+                    "key": "username"
+                  },
+                  {
+                    "type": "string",
+                    "value": "{{user_password}}",
+                    "key": "password"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "60713ab2-f5c2-4da6-b047-a3734d97ba76",
+            "name": "get replies to comment",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  "{{post_id}}",
+                  "comments",
+                  "{{comment_id}}",
+                  "replies",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "GET",
+              "auth": {
+                "type": "noauth",
+                "noauth": []
+              }
+            },
+            "response": [],
+            "event": []
+          },
+          {
+            "id": "6e993b1e-74c5-4eb7-a103-6a7fcf7dbd6f",
+            "name": "create reply to comment",
+            "request": {
+              "url": {
+                "path": [
+                  "api",
+                  "posts",
+                  "{{post_id}}",
+                  "comments",
+                  "{{comment_id}}",
+                  "replies",
+                  ""
+                ],
+                "host": [
+                  "{{env}}"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "POST",
+              "body": {
+                "mode": "formdata",
+                "formdata": [
+                  {
+                    "key": "content",
+                    "value": "{{comment_content}}",
+                    "type": "text"
+                  }
+                ]
+              },
+              "auth": {
+                "type": "basic",
+                "basic": [
+                  {
+                    "type": "string",
+                    "value": "dina",
+                    "key": "username"
+                  },
+                  {
+                    "type": "string",
+                    "value": "{{user_password}}",
+                    "key": "password"
+                  }
+                ]
+              }
+            },
+            "response": [],
+            "event": []
+          }
+        ],
+        "event": []
+      }
+    ],
+    "auth": {
+      "type": "basic",
+      "basic": [
+        {
+          "type": "string",
+          "value": "{{user_password}}",
+          "key": "password"
+        },
+        {
+          "type": "string",
+          "value": "{{user_username}}",
+          "key": "username"
+        }
+      ]
+    },
+    "event": [
+      {
+        "listen": "prerequest",
+        "script": {
+          "id": "c2850264-a0d0-432a-a9d6-a0c00027c541",
+          "type": "text/javascript",
+          "exec": [
+            ""
+          ],
+          "_lastExecutionId": "04b0ee7c-d9f4-4fdb-8a63-3c0dd17d44f5"
+        }
+      },
+      {
+        "listen": "test",
+        "script": {
+          "id": "724d74ae-a29a-47d8-9068-7602fe949566",
+          "type": "text/javascript",
+          "exec": [
+            ""
+          ],
+          "_lastExecutionId": "1f94fd09-1561-4728-837a-c5a46da5a7e5"
+        }
+      }
+    ],
+    "variable": [],
+    "info": {
+      "_postman_id": "0ac1f302-a649-4d50-bcd0-cf92c7a4c939",
+      "name": "news_api",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "description": {
+        "content": "## News API Collection\n\nNews API: [link](https://news-api-assessment.herokuapp.com/api/posts/)\n\nThis is a collection to news api created as test assessment by Dina Iovcheva  [github:broeld/news_api](https://github.com/broeld/news_api)\n\nNews api provides CRUD functions to posts, comments, replies to comments and a few functions to users (create, update and get by id).\n\n#### users\n| endpoint          | description   |\n| ----------------- |:-------------:|\n| POST api/users/   | create user   |\n| GET  api/users/{{user_id}}/     | get user-info (only for your user account) |\n| PUT  api/users/{{user_id}}/     | update user info (only for your user account)|\n\n\n#### posts\n| endpoint          | description   |\n| ----------------- |:-------------:|\n| GET     api/posts/    | get all posts   |\n| POST    api/posts/   | create post (only for users) |\n| GET     api/posts/{{post_id}}/   | get post|\n| PUT     api/posts/{{post_id}}/   | update post (only for author)  |\n| DELETE  api/posts/{{post_id}}/   | delete post (only for author) |\n| POST    api/posts/{{post_id}}/upvote   | upvote/downvote post |\n\n#### comments\n\n| endpoint          | description   |\n| ----------------- |:-------------:|\n| GET     api/posts/{{post_id}}/comments/  | get comments to post   |\n| POST    api/posts/{{post_id}}/comments/  | create comment to post (only for users)  |\n| GET     api/posts/{{post_id}}/comments/{{comment_id}}/   | get comment info |\n| PUT     api/posts/{{post_id}}/comments/{{comment_id}}/   | update comment (only for author) |\n| DELETE  api/posts/{{post_id}}/comments/{{comment_id}}/   | delete comment (only for author) |\n| GET     api/posts/{{post_id}}/comments/{{comment_id}}/replies   | get replies to comment  |\n| POST    api/posts/{{post_id}}/comments/{{comment_id}}/replies   | create reply to comment |",
+        "type": "text/plain"
+      }
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment",
+      "postman_exported_at": "2021-11-22T21:26:50.437Z",
+      "postman_exported_using": "Postman/9.0.9-211111-1330"
+    },
+    "id": "b39c08bf-799b-4c65-a65c-dedaab4f8596",
+    "name": "prod",
+    "values": [
+      {
+        "type": "any",
+        "value": "https://news-api-assessment.herokuapp.com",
+        "key": "env"
+      },
+      {
+        "type": "any",
+        "value": "5",
+        "key": "post_id"
+      },
+      {
+        "type": "any",
+        "value": "4",
+        "key": "comment_id"
+      },
+      {
+        "type": "any",
+        "value": "4",
+        "key": "user_id"
+      },
+      {
+        "type": "any",
+        "value": "dinadina",
+        "key": "user_username"
+      },
+      {
+        "type": "any",
+        "value": "dinadinadina",
+        "key": "user_password"
+      },
+      {
+        "type": "any",
+        "value": "Post",
+        "key": "post_title"
+      },
+      {
+        "type": "any",
+        "value": "https://youtu.be/dQw4w9WgXcQ",
+        "key": "post_link"
+      },
+      {
+        "type": "any",
+        "value": "Comment content",
+        "key": "comment_content"
+      }
+    ]
+  },
+  "globals": {
+    "id": "30815327-6d69-4392-9019-bcbeb7a412f8",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 16,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 38,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 16,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 16,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 16,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 19,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 19,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 391.4375,
+      "responseMin": 149,
+      "responseMax": 950,
+      "responseSd": 203.88752069155674,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1637616543029,
+      "completed": 1637616549718
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 16,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "d1fab841-bb30-4d56-ad4b-12009dbabb60",
+          "httpRequestId": "2dbcafc8-8bbb-472c-a96f-54bc1644c56e"
+        },
+        "item": {
+          "id": "f4e73b9e-594c-40e1-9b03-cb29b8fd9581",
+          "name": "create user",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "users",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "{{user_username}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{user_password}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "users",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "add17850-363e-46ad-8371-b0e6a22f964f",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "290",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "username",
+                "value": "dinadina",
+                "type": "text"
+              },
+              {
+                "key": "password",
+                "value": "dinadinadina",
+                "type": "text"
+              }
+            ]
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "c4691ffd-a8cc-4c46-9fe1-38f2e9d383d6",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:03 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "POST, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "58"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              117,
+              115,
+              101,
+              114,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              91,
+              34,
+              65,
+              32,
+              117,
+              115,
+              101,
+              114,
+              32,
+              119,
+              105,
+              116,
+              104,
+              32,
+              116,
+              104,
+              97,
+              116,
+              32,
+              117,
+              115,
+              101,
+              114,
+              110,
+              97,
+              109,
+              101,
+              32,
+              97,
+              108,
+              114,
+              101,
+              97,
+              100,
+              121,
+              32,
+              101,
+              120,
+              105,
+              115,
+              116,
+              115,
+              46,
+              34,
+              93,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 950,
+          "responseSize": 58
+        },
+        "id": "f4e73b9e-594c-40e1-9b03-cb29b8fd9581"
+      },
+      {
+        "cursor": {
+          "ref": "37a4e981-38ce-46d4-8703-f40eb2a051d4",
+          "length": 16,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "75e4d2ab-6504-4ca0-a984-091719698970"
+        },
+        "item": {
+          "id": "61001563-5949-43e9-a882-3270856b9b89",
+          "name": "get user (self)",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "users",
+                "4",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "type": "string",
+                  "value": "{{user_password}}",
+                  "key": "password"
+                },
+                {
+                  "type": "string",
+                  "value": "{{user_username}}",
+                  "key": "username"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "users",
+              "4",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Basic ZGluYWRpbmE6ZGluYWRpbmFkaW5h",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "8a1145ca-f327-45f2-8086-15b7bc5e2d90",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "auth": {
+            "type": "basic",
+            "basic": [
+              {
+                "type": "string",
+                "value": "dinadinadina",
+                "key": "password"
+              },
+              {
+                "type": "string",
+                "value": "dinadina",
+                "key": "username"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "a2f3d9a5-3d12-471d-8351-a68e224614f0",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:04 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "30"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              52,
+              44,
+              34,
+              117,
+              115,
+              101,
+              114,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 438,
+          "responseSize": 30
+        },
+        "id": "61001563-5949-43e9-a882-3270856b9b89"
+      },
+      {
+        "cursor": {
+          "ref": "e38b8c31-7500-4113-a3c9-5521790de371",
+          "length": 16,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "acddfb79-b1b3-495e-bad3-96e6230ca687"
+        },
+        "item": {
+          "id": "65afd1f3-8570-4d6b-882a-bbdc1e4c95ef",
+          "name": "update user(self)",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "users",
+                "{{user_id}}"
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "{{user_username}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{user_password}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "type": "string",
+                  "value": "{{user_password}}",
+                  "key": "password"
+                },
+                {
+                  "type": "string",
+                  "value": "{{user_username}}",
+                  "key": "username"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "users",
+              "4"
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Basic ZGluYWRpbmE6ZGluYWRpbmFkaW5h",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "f61c1e23-8641-44e9-ad82-8156a7aab03b",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "290",
+              "system": true
+            }
+          ],
+          "method": "PUT",
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "username",
+                "value": "dinadina",
+                "type": "text"
+              },
+              {
+                "key": "password",
+                "value": "dinadinadina",
+                "type": "text"
+              }
+            ]
+          },
+          "auth": {
+            "type": "basic",
+            "basic": [
+              {
+                "type": "string",
+                "value": "dinadinadina",
+                "key": "password"
+              },
+              {
+                "type": "string",
+                "value": "dinadina",
+                "key": "username"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "8a694688-c5a7-4488-a84a-132e164f4594",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:05 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "30"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              52,
+              44,
+              34,
+              117,
+              115,
+              101,
+              114,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 580,
+          "responseSize": 30
+        },
+        "id": "65afd1f3-8570-4d6b-882a-bbdc1e4c95ef"
+      },
+      {
+        "cursor": {
+          "ref": "f27c97be-54e0-4054-8633-bd271ecda3fd",
+          "length": 16,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "e5c00418-71af-4398-bae1-4829edf1f180"
+        },
+        "item": {
+          "id": "9d0d00c0-3e90-492e-b151-bb18861be96a",
+          "name": "posts",
+          "request": {
+            "description": {
+              "content": "get all posts\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "description": {
+            "content": "get all posts\n",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "250bcab6-645b-4fd7-b37e-ff89c8a19abb",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "bdd174c8-a8ca-4c6c-9573-3e567834376e",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:05 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "662"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              50,
+              44,
+              34,
+              116,
+              105,
+              116,
+              108,
+              101,
+              34,
+              58,
+              34,
+              80,
+              111,
+              115,
+              116,
+              34,
+              44,
+              34,
+              108,
+              105,
+              110,
+              107,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              121,
+              111,
+              117,
+              116,
+              117,
+              46,
+              98,
+              101,
+              47,
+              100,
+              81,
+              119,
+              52,
+              119,
+              57,
+              87,
+              103,
+              88,
+              99,
+              81,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              97,
+              109,
+              111,
+              117,
+              110,
+              116,
+              95,
+              111,
+              102,
+              95,
+              117,
+              112,
+              118,
+              111,
+              116,
+              101,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              51,
+              44,
+              34,
+              116,
+              105,
+              116,
+              108,
+              101,
+              34,
+              58,
+              34,
+              80,
+              111,
+              115,
+              116,
+              34,
+              44,
+              34,
+              108,
+              105,
+              110,
+              107,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              121,
+              111,
+              117,
+              116,
+              117,
+              46,
+              98,
+              101,
+              47,
+              100,
+              81,
+              119,
+              52,
+              119,
+              57,
+              87,
+              103,
+              88,
+              99,
+              81,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              97,
+              109,
+              111,
+              117,
+              110,
+              116,
+              95,
+              111,
+              102,
+              95,
+              117,
+              112,
+              118,
+              111,
+              116,
+              101,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              52,
+              44,
+              34,
+              116,
+              105,
+              116,
+              108,
+              101,
+              34,
+              58,
+              34,
+              80,
+              111,
+              115,
+              116,
+              34,
+              44,
+              34,
+              108,
+              105,
+              110,
+              107,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              121,
+              111,
+              117,
+              116,
+              117,
+              46,
+              98,
+              101,
+              47,
+              100,
+              81,
+              119,
+              52,
+              119,
+              57,
+              87,
+              103,
+              88,
+              99,
+              81,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              97,
+              109,
+              111,
+              117,
+              110,
+              116,
+              95,
+              111,
+              102,
+              95,
+              117,
+              112,
+              118,
+              111,
+              116,
+              101,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              53,
+              44,
+              34,
+              116,
+              105,
+              116,
+              108,
+              101,
+              34,
+              58,
+              34,
+              80,
+              111,
+              115,
+              116,
+              34,
+              44,
+              34,
+              108,
+              105,
+              110,
+              107,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              121,
+              111,
+              117,
+              116,
+              117,
+              46,
+              98,
+              101,
+              47,
+              100,
+              81,
+              119,
+              52,
+              119,
+              57,
+              87,
+              103,
+              88,
+              99,
+              81,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              97,
+              109,
+              111,
+              117,
+              110,
+              116,
+              95,
+              111,
+              102,
+              95,
+              117,
+              112,
+              118,
+              111,
+              116,
+              101,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              49,
+              44,
+              34,
+              116,
+              105,
+              116,
+              108,
+              101,
+              34,
+              58,
+              34,
+              80,
+              111,
+              115,
+              116,
+              34,
+              44,
+              34,
+              108,
+              105,
+              110,
+              107,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              121,
+              111,
+              117,
+              116,
+              117,
+              46,
+              98,
+              101,
+              47,
+              100,
+              81,
+              119,
+              52,
+              119,
+              57,
+              87,
+              103,
+              88,
+              99,
+              81,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              48,
+              52,
+              45,
+              49,
+              55,
+              34,
+              44,
+              34,
+              97,
+              109,
+              111,
+              117,
+              110,
+              116,
+              95,
+              111,
+              102,
+              95,
+              117,
+              112,
+              118,
+              111,
+              116,
+              101,
+              115,
+              34,
+              58,
+              50,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              117,
+              115,
+              101,
+              114,
+              34,
+              125,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 157,
+          "responseSize": 662
+        },
+        "id": "9d0d00c0-3e90-492e-b151-bb18861be96a"
+      },
+      {
+        "cursor": {
+          "ref": "9c080b2f-542d-4efe-a03d-cd633aa8a427",
+          "length": 16,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "a8c0ba60-4f02-4b9f-9938-082a6b9ec128"
+        },
+        "item": {
+          "id": "2f7febf6-1fee-4dea-aa6a-e7bdd9eb2ed8",
+          "name": "create post",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "{{post_title}}",
+                  "type": "text"
+                },
+                {
+                  "key": "link",
+                  "value": "{{post_link}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "type": "string",
+                  "value": "{{user_password}}",
+                  "key": "password"
+                },
+                {
+                  "type": "string",
+                  "value": "{{user_username}}",
+                  "key": "username"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Basic ZGluYWRpbmE6ZGluYWRpbmFkaW5h",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "8768a241-7ffc-4d4a-8dd6-268ce187085f",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "295",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "title",
+                "value": "Post",
+                "type": "text"
+              },
+              {
+                "key": "link",
+                "value": "https://youtu.be/dQw4w9WgXcQ",
+                "type": "text"
+              }
+            ]
+          },
+          "auth": {
+            "type": "basic",
+            "basic": [
+              {
+                "type": "string",
+                "value": "dinadinadina",
+                "key": "password"
+              },
+              {
+                "type": "string",
+                "value": "dinadina",
+                "key": "username"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "e2e45877-648a-425b-a0b0-4aff3a86121e",
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:05 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "132"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              54,
+              44,
+              34,
+              116,
+              105,
+              116,
+              108,
+              101,
+              34,
+              58,
+              34,
+              80,
+              111,
+              115,
+              116,
+              34,
+              44,
+              34,
+              108,
+              105,
+              110,
+              107,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              121,
+              111,
+              117,
+              116,
+              117,
+              46,
+              98,
+              101,
+              47,
+              100,
+              81,
+              119,
+              52,
+              119,
+              57,
+              87,
+              103,
+              88,
+              99,
+              81,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              97,
+              109,
+              111,
+              117,
+              110,
+              116,
+              95,
+              111,
+              102,
+              95,
+              117,
+              112,
+              118,
+              111,
+              116,
+              101,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 358,
+          "responseSize": 132
+        },
+        "id": "2f7febf6-1fee-4dea-aa6a-e7bdd9eb2ed8"
+      },
+      {
+        "cursor": {
+          "ref": "90ebc588-10b4-4d31-8974-62e353090395",
+          "length": 16,
+          "cycles": 1,
+          "position": 5,
+          "iteration": 0,
+          "httpRequestId": "bce401c8-a4a2-4a9f-8f1b-c452a7b7715a"
+        },
+        "item": {
+          "id": "c1b666fe-0082-4701-8674-13b815207ea8",
+          "name": "get post by id",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                "{{post_id}}",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              "5",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "626d5329-a267-4c79-835e-c5342acda6f1",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "8bfcbfef-8e64-4887-b745-804d0429ab30",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:05 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "132"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              53,
+              44,
+              34,
+              116,
+              105,
+              116,
+              108,
+              101,
+              34,
+              58,
+              34,
+              80,
+              111,
+              115,
+              116,
+              34,
+              44,
+              34,
+              108,
+              105,
+              110,
+              107,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              121,
+              111,
+              117,
+              116,
+              117,
+              46,
+              98,
+              101,
+              47,
+              100,
+              81,
+              119,
+              52,
+              119,
+              57,
+              87,
+              103,
+              88,
+              99,
+              81,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              97,
+              109,
+              111,
+              117,
+              110,
+              116,
+              95,
+              111,
+              102,
+              95,
+              117,
+              112,
+              118,
+              111,
+              116,
+              101,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 222,
+          "responseSize": 132
+        },
+        "id": "c1b666fe-0082-4701-8674-13b815207ea8"
+      },
+      {
+        "cursor": {
+          "ref": "88cb0872-c696-4574-929d-625c22ad3454",
+          "length": 16,
+          "cycles": 1,
+          "position": 6,
+          "iteration": 0,
+          "httpRequestId": "3a083e2f-cf03-4664-ab58-6d0ab0cb1ce2"
+        },
+        "item": {
+          "id": "0a864200-e8fa-4f34-a6ff-d66c0386640c",
+          "name": "update post by id",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                "{{post_id}}"
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "{{post_title}}",
+                  "type": "text"
+                },
+                {
+                  "key": "link",
+                  "value": "{{post_title}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "type": "string",
+                  "value": "{{user_password}}",
+                  "key": "password"
+                },
+                {
+                  "type": "string",
+                  "value": "{{user_username}}",
+                  "key": "username"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              "5"
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Basic ZGluYWRpbmE6ZGluYWRpbmFkaW5h",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "36c114ae-fd6a-4281-a3ea-a3f52db7c64e",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "271",
+              "system": true
+            }
+          ],
+          "method": "PUT",
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "title",
+                "value": "Post",
+                "type": "text"
+              },
+              {
+                "key": "link",
+                "value": "Post",
+                "type": "text"
+              }
+            ]
+          },
+          "auth": {
+            "type": "basic",
+            "basic": [
+              {
+                "type": "string",
+                "value": "dinadinadina",
+                "key": "password"
+              },
+              {
+                "type": "string",
+                "value": "dinadina",
+                "key": "username"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "99ef9ed7-cc06-4038-a3a3-31796733f37f",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:06 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "132"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              53,
+              44,
+              34,
+              116,
+              105,
+              116,
+              108,
+              101,
+              34,
+              58,
+              34,
+              80,
+              111,
+              115,
+              116,
+              34,
+              44,
+              34,
+              108,
+              105,
+              110,
+              107,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              121,
+              111,
+              117,
+              116,
+              117,
+              46,
+              98,
+              101,
+              47,
+              100,
+              81,
+              119,
+              52,
+              119,
+              57,
+              87,
+              103,
+              88,
+              99,
+              81,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              97,
+              109,
+              111,
+              117,
+              110,
+              116,
+              95,
+              111,
+              102,
+              95,
+              117,
+              112,
+              118,
+              111,
+              116,
+              101,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 534,
+          "responseSize": 132
+        },
+        "id": "0a864200-e8fa-4f34-a6ff-d66c0386640c"
+      },
+      {
+        "cursor": {
+          "ref": "64614efe-f161-43b5-b907-fc0eba74f68f",
+          "length": 16,
+          "cycles": 1,
+          "position": 7,
+          "iteration": 0,
+          "httpRequestId": "a5e07c75-fcfd-4a88-9181-3e85c418112a"
+        },
+        "item": {
+          "id": "75e58da2-4a66-43cd-8ac6-c67654e53012",
+          "name": "delete post by id",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                "{{post_id}}"
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "type": "string",
+                  "value": "{{user_password}}",
+                  "key": "password"
+                },
+                {
+                  "type": "string",
+                  "value": "{{user_username}}",
+                  "key": "username"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              "5"
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Basic ZGluYWRpbmE6ZGluYWRpbmFkaW5h",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "6064d42a-ff08-4c09-92d2-451564b417cf",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "DELETE",
+          "auth": {
+            "type": "basic",
+            "basic": [
+              {
+                "type": "string",
+                "value": "dinadinadina",
+                "key": "password"
+              },
+              {
+                "type": "string",
+                "value": "dinadina",
+                "key": "username"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "c0666e54-fdb9-4235-82ac-1c6c1a63b103",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:06 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "132"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              53,
+              44,
+              34,
+              116,
+              105,
+              116,
+              108,
+              101,
+              34,
+              58,
+              34,
+              80,
+              111,
+              115,
+              116,
+              34,
+              44,
+              34,
+              108,
+              105,
+              110,
+              107,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              121,
+              111,
+              117,
+              116,
+              117,
+              46,
+              98,
+              101,
+              47,
+              100,
+              81,
+              119,
+              52,
+              119,
+              57,
+              87,
+              103,
+              88,
+              99,
+              81,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              97,
+              109,
+              111,
+              117,
+              110,
+              116,
+              95,
+              111,
+              102,
+              95,
+              117,
+              112,
+              118,
+              111,
+              116,
+              101,
+              115,
+              34,
+              58,
+              48,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 634,
+          "responseSize": 132
+        },
+        "id": "75e58da2-4a66-43cd-8ac6-c67654e53012"
+      },
+      {
+        "cursor": {
+          "ref": "939ad420-e25d-4233-ac36-4c74c5b9f1a9",
+          "length": 16,
+          "cycles": 1,
+          "position": 8,
+          "iteration": 0,
+          "httpRequestId": "9da7a9b3-9c32-4533-b071-64a953bc4df9"
+        },
+        "item": {
+          "id": "e90a2baa-cff6-4aaa-89b4-c8b72e29b85e",
+          "name": "post upvote/downvote",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                "{{post_id}}",
+                "upvote",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "type": "string",
+                  "value": "{{user_password}}",
+                  "key": "password"
+                },
+                {
+                  "type": "string",
+                  "value": "{{user_username}}",
+                  "key": "username"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              "5",
+              "upvote",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Basic ZGluYWRpbmE6ZGluYWRpbmFkaW5h",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "addc4b81-bace-4154-a852-7336529d5c34",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "0",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "auth": {
+            "type": "basic",
+            "basic": [
+              {
+                "type": "string",
+                "value": "dinadinadina",
+                "key": "password"
+              },
+              {
+                "type": "string",
+                "value": "dinadina",
+                "key": "username"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "8ad9b19e-d647-430d-843e-a35fb9370fc8",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:07 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "POST, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "132"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              53,
+              44,
+              34,
+              116,
+              105,
+              116,
+              108,
+              101,
+              34,
+              58,
+              34,
+              80,
+              111,
+              115,
+              116,
+              34,
+              44,
+              34,
+              108,
+              105,
+              110,
+              107,
+              34,
+              58,
+              34,
+              104,
+              116,
+              116,
+              112,
+              115,
+              58,
+              47,
+              47,
+              121,
+              111,
+              117,
+              116,
+              117,
+              46,
+              98,
+              101,
+              47,
+              100,
+              81,
+              119,
+              52,
+              119,
+              57,
+              87,
+              103,
+              88,
+              99,
+              81,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              97,
+              109,
+              111,
+              117,
+              110,
+              116,
+              95,
+              111,
+              102,
+              95,
+              117,
+              112,
+              118,
+              111,
+              116,
+              101,
+              115,
+              34,
+              58,
+              49,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 391,
+          "responseSize": 132
+        },
+        "id": "e90a2baa-cff6-4aaa-89b4-c8b72e29b85e"
+      },
+      {
+        "cursor": {
+          "ref": "82539d5f-f5a0-46e2-a1e4-34f4881b0a05",
+          "length": 16,
+          "cycles": 1,
+          "position": 9,
+          "iteration": 0,
+          "httpRequestId": "77d9368c-66c1-4d30-bafa-8d3f6af518f8"
+        },
+        "item": {
+          "id": "1bfa2e0e-54a2-4584-a029-71fd9d80f5b2",
+          "name": "comments by post",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                "{{post_id}}",
+                "comments",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              "5",
+              "comments",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "b36c1233-b2a2-4c42-b480-4b8f797b24b7",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "1535aedd-016c-438d-b4a9-55f454b0976d",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:07 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "191"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              52,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              44,
+              34,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              34,
+              58,
+              34,
+              67,
+              111,
+              109,
+              109,
+              101,
+              110,
+              116,
+              32,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              112,
+              111,
+              115,
+              116,
+              34,
+              58,
+              53,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              53,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              44,
+              34,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              34,
+              58,
+              34,
+              67,
+              111,
+              109,
+              109,
+              101,
+              110,
+              116,
+              32,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              112,
+              111,
+              115,
+              116,
+              34,
+              58,
+              53,
+              125,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 187,
+          "responseSize": 191
+        },
+        "id": "1bfa2e0e-54a2-4584-a029-71fd9d80f5b2"
+      },
+      {
+        "cursor": {
+          "ref": "4809324e-080c-43b7-9551-80c3631a9e44",
+          "length": 16,
+          "cycles": 1,
+          "position": 10,
+          "iteration": 0,
+          "httpRequestId": "e2117f5c-9054-43ff-b248-2bb18dea75df"
+        },
+        "item": {
+          "id": "37d9b44c-783a-41bc-9c9e-850e42a64875",
+          "name": "create comment to post",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                "{{post_id}}",
+                "comments",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "content",
+                  "value": "{{comment_content}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "type": "string",
+                  "value": "{{user_password}}",
+                  "key": "password"
+                },
+                {
+                  "type": "string",
+                  "value": "{{user_username}}",
+                  "key": "username"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              "5",
+              "comments",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Basic ZGluYWRpbmE6ZGluYWRpbmFkaW5h",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "5c5c6c1c-f0f7-4cae-9e57-5574d1dde26c",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "177",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "content",
+                "value": "Comment content",
+                "type": "text"
+              }
+            ]
+          },
+          "auth": {
+            "type": "basic",
+            "basic": [
+              {
+                "type": "string",
+                "value": "dinadinadina",
+                "key": "password"
+              },
+              {
+                "type": "string",
+                "value": "dinadina",
+                "key": "username"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "d72b96e7-f7ba-4949-9fc9-8f0300371a43",
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:08 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "94"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              54,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              44,
+              34,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              34,
+              58,
+              34,
+              67,
+              111,
+              109,
+              109,
+              101,
+              110,
+              116,
+              32,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              112,
+              111,
+              115,
+              116,
+              34,
+              58,
+              53,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 367,
+          "responseSize": 94
+        },
+        "id": "37d9b44c-783a-41bc-9c9e-850e42a64875"
+      },
+      {
+        "cursor": {
+          "ref": "1781e5c2-0f2a-431f-af61-ea5aaaed4584",
+          "length": 16,
+          "cycles": 1,
+          "position": 11,
+          "iteration": 0,
+          "httpRequestId": "85297b1b-78c0-43d6-9746-851ea157b7d1"
+        },
+        "item": {
+          "id": "2bd5e10e-159e-458c-a661-f684f5a0b11a",
+          "name": "get comment",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                "{{post_id}}",
+                "comments",
+                "{{comment_id}}",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              "5",
+              "comments",
+              "4",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "40945140-7f58-4349-a866-a71c53987570",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "4f168142-b7da-4a44-b837-d7fbeba76899",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:08 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "94"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              52,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              44,
+              34,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              34,
+              58,
+              34,
+              67,
+              111,
+              109,
+              109,
+              101,
+              110,
+              116,
+              32,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              112,
+              111,
+              115,
+              116,
+              34,
+              58,
+              53,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 149,
+          "responseSize": 94
+        },
+        "id": "2bd5e10e-159e-458c-a661-f684f5a0b11a"
+      },
+      {
+        "cursor": {
+          "ref": "59ea26b1-ae9d-4e39-9d82-6a640c1e9495",
+          "length": 16,
+          "cycles": 1,
+          "position": 12,
+          "iteration": 0,
+          "httpRequestId": "dba2a79e-3eaa-41b9-8738-9a74ff546ce5"
+        },
+        "item": {
+          "id": "1daa89a8-20fb-48ae-8849-bf788be371a8",
+          "name": "update comment",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                "{{post_id}}",
+                "comments",
+                "{{comment_id}}",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "content",
+                  "value": "{{comment_content}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "type": "string",
+                  "value": "{{user_username}}",
+                  "key": "username"
+                },
+                {
+                  "type": "string",
+                  "value": "{{user_password}}",
+                  "key": "password"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              "5",
+              "comments",
+              "4",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Basic ZGluYWRpbmE6ZGluYWRpbmFkaW5h",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "2913f333-5fa9-4d92-b500-56441325e224",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "177",
+              "system": true
+            }
+          ],
+          "method": "PUT",
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "content",
+                "value": "Comment content",
+                "type": "text"
+              }
+            ]
+          },
+          "auth": {
+            "type": "basic",
+            "basic": [
+              {
+                "type": "string",
+                "value": "dinadina",
+                "key": "username"
+              },
+              {
+                "type": "string",
+                "value": "dinadinadina",
+                "key": "password"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "c216e3dc-34b4-4bac-9c44-dbf39ed910bc",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:08 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "94"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              52,
+              44,
+              34,
+              97,
+              117,
+              116,
+              104,
+              111,
+              114,
+              34,
+              58,
+              34,
+              100,
+              105,
+              110,
+              97,
+              100,
+              105,
+              110,
+              97,
+              34,
+              44,
+              34,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              34,
+              58,
+              34,
+              67,
+              111,
+              109,
+              109,
+              101,
+              110,
+              116,
+              32,
+              99,
+              111,
+              110,
+              116,
+              101,
+              110,
+              116,
+              34,
+              44,
+              34,
+              99,
+              114,
+              101,
+              97,
+              116,
+              105,
+              111,
+              110,
+              95,
+              100,
+              97,
+              116,
+              101,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              49,
+              45,
+              49,
+              49,
+              45,
+              50,
+              50,
+              34,
+              44,
+              34,
+              112,
+              111,
+              115,
+              116,
+              34,
+              58,
+              53,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 347,
+          "responseSize": 94
+        },
+        "id": "1daa89a8-20fb-48ae-8849-bf788be371a8"
+      },
+      {
+        "cursor": {
+          "ref": "5f70aef0-d361-4cab-a949-f82f8bc0f4e7",
+          "length": 16,
+          "cycles": 1,
+          "position": 13,
+          "iteration": 0,
+          "httpRequestId": "ca80a750-1143-4b1f-a9a9-923f6eb7ea00"
+        },
+        "item": {
+          "id": "04f2a838-2ee0-4dd4-a24b-7db4e30abc7f",
+          "name": "delete comment",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                "{{post_id}}",
+                "comments",
+                "{{comment_id}}",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "type": "string",
+                  "value": "{{user_username}}",
+                  "key": "username"
+                },
+                {
+                  "type": "string",
+                  "value": "{{user_password}}",
+                  "key": "password"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              "5",
+              "comments",
+              "4",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Basic ZGluYWRpbmE6ZGluYWRpbmFkaW5h",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "4e6ea8b2-74db-4f8c-8d48-d505c42652a9",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "DELETE",
+          "auth": {
+            "type": "basic",
+            "basic": [
+              {
+                "type": "string",
+                "value": "dinadina",
+                "key": "username"
+              },
+              {
+                "type": "string",
+                "value": "dinadinadina",
+                "key": "password"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "6cacc48c-becd-47ae-a9d4-4d2e874b8327",
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:08 GMT"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "0"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": []
+          },
+          "cookie": [],
+          "responseTime": 380,
+          "responseSize": 0
+        },
+        "id": "04f2a838-2ee0-4dd4-a24b-7db4e30abc7f"
+      },
+      {
+        "cursor": {
+          "ref": "1a2a2a63-4dd8-4cd7-b265-de4df26bd015",
+          "length": 16,
+          "cycles": 1,
+          "position": 14,
+          "iteration": 0,
+          "httpRequestId": "478ffa6b-98b0-4f8e-b68e-4327e807ac14"
+        },
+        "item": {
+          "id": "60713ab2-f5c2-4da6-b047-a3734d97ba76",
+          "name": "get replies to comment",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                "{{post_id}}",
+                "comments",
+                "{{comment_id}}",
+                "replies",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              "5",
+              "comments",
+              "4",
+              "replies",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "88d27879-60e0-4a94-8dee-36349d94e032",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "dc6a89f5-51fe-4dca-983a-61724ae1208e",
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:09 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "23"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              78,
+              111,
+              116,
+              32,
+              102,
+              111,
+              117,
+              110,
+              100,
+              46,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 172,
+          "responseSize": 23
+        },
+        "id": "60713ab2-f5c2-4da6-b047-a3734d97ba76"
+      },
+      {
+        "cursor": {
+          "ref": "454131bb-63bf-4a2b-8adf-34e10a5302b1",
+          "length": 16,
+          "cycles": 1,
+          "position": 15,
+          "iteration": 0,
+          "httpRequestId": "f703eb82-d120-4fcc-9eca-dd8c330423c3"
+        },
+        "item": {
+          "id": "6e993b1e-74c5-4eb7-a103-6a7fcf7dbd6f",
+          "name": "create reply to comment",
+          "request": {
+            "url": {
+              "path": [
+                "api",
+                "posts",
+                "{{post_id}}",
+                "comments",
+                "{{comment_id}}",
+                "replies",
+                ""
+              ],
+              "host": [
+                "{{env}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "content",
+                  "value": "{{comment_content}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "type": "string",
+                  "value": "dina",
+                  "key": "username"
+                },
+                {
+                  "type": "string",
+                  "value": "{{user_password}}",
+                  "key": "password"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "api",
+              "posts",
+              "5",
+              "comments",
+              "4",
+              "replies",
+              ""
+            ],
+            "host": [
+              "news-api-assessment",
+              "herokuapp",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Basic ZGluYTpkaW5hZGluYWRpbmE=",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.28.4",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "da5a14bd-49a4-4636-8d3e-3a7ab4b2aded",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "news-api-assessment.herokuapp.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "177",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "content",
+                "value": "Comment content",
+                "type": "text"
+              }
+            ]
+          },
+          "auth": {
+            "type": "basic",
+            "basic": [
+              {
+                "type": "string",
+                "value": "dina",
+                "key": "username"
+              },
+              {
+                "type": "string",
+                "value": "dinadinadina",
+                "key": "password"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "36e1691a-30df-47e9-9514-fea4a336b79b",
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "gunicorn"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 22 Nov 2021 21:29:09 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept, Cookie"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "39"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=2592000; includeSubDomains; preload"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Via",
+              "value": "1.1 vegur"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              73,
+              110,
+              118,
+              97,
+              108,
+              105,
+              100,
+              32,
+              117,
+              115,
+              101,
+              114,
+              110,
+              97,
+              109,
+              101,
+              47,
+              112,
+              97,
+              115,
+              115,
+              119,
+              111,
+              114,
+              100,
+              46,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 397,
+          "responseSize": 39
+        },
+        "id": "6e993b1e-74c5-4eb7-a103-6a7fcf7dbd6f"
+      }
+    ],
+    "transfers": {
+      "responseTotal": 1975
+    },
+    "failures": [],
+    "error": null
+  }
+}
